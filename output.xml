@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.0 on win32)" generated="20220707 16:35:03.102" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="D:\Programacao\Testes\Test_Cases\Login.robot">
+<test id="s1-t1" name="WelcomePage" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220707 16:35:03.980" level="INFO">Opening browser 'firefox' to base url 'http://10.5.63.33:8282/'.</msg>
+<msg timestamp="20220707 16:35:03.990" level="INFO">Firefox driver log is always forced to to: D:\Programacao\Testes\geckodriver-97.log</msg>
+<status status="PASS" starttime="20220707 16:35:03.979" endtime="20220707 16:35:19.775"/>
+</kw>
+<kw name="loginToDPortal">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[contains(text(),'clique aqui')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220707 16:35:19.777" level="INFO">Clicking element 'xpath=//a[contains(text(),'clique aqui')]'.</msg>
+<status status="PASS" starttime="20220707 16:35:19.776" endtime="20220707 16:35:20.189"/>
+</kw>
+<kw name="Get JSON Field Value" library="Utils">
+<var>${getUsername}</var>
+<arg>Input_Data/input.json</arg>
+<arg>xxx.zzz.username</arg>
+<kw name="Get Value From Json" library="JsonUtil">
+<var>${value}</var>
+<arg>${jsonFile}</arg>
+<arg>${field}</arg>
+<msg timestamp="20220707 16:35:20.198" level="FAIL">OSError</msg>
+<status status="FAIL" starttime="20220707 16:35:20.192" endtime="20220707 16:35:20.199"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n--Value for field</arg>
+<arg>${field} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220707 16:35:20.201" endtime="20220707 16:35:20.201"/>
+</kw>
+<status status="FAIL" starttime="20220707 16:35:20.190" endtime="20220707 16:35:20.203"/>
+</kw>
+<kw name="Get JSON Field Value" library="Utils">
+<var>${getPassword}</var>
+<arg>Input_Data/input.json</arg>
+<arg>xxx.aaa.password</arg>
+<status status="NOT RUN" starttime="20220707 16:35:20.204" endtime="20220707 16:35:20.205"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>${getUsername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220707 16:35:20.205" endtime="20220707 16:35:20.205"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${getPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220707 16:35:20.206" endtime="20220707 16:35:20.206"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220707 16:35:20.206" endtime="20220707 16:35:20.207"/>
+</kw>
+<status status="FAIL" starttime="20220707 16:35:19.775" endtime="20220707 16:35:20.209"/>
+</kw>
+<status status="FAIL" starttime="20220707 16:35:03.974" endtime="20220707 16:35:20.216">OSError</status>
+</test>
+<status status="FAIL" starttime="20220707 16:35:03.107" endtime="20220707 16:35:20.237"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
